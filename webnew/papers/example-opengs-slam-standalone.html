@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB-Only Gaussian Splatting SLAM - 3DAgentWorldLab</title>
+    <meta name="description" content="A novel RGB-only Gaussian splatting SLAM method for unbounded outdoor scenes">
+    
+    <!-- Bulma CSS Framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 内联样式 - 简化版 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #4a4a4a;
+            line-height: 1.5;
+            background-color: #fff;
+        }
+
+        /* 顶部导航栏 */
+        .navbar.is-fixed-top {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Logo样式 */
+        .navbar-item.logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #363636 !important;
+            padding: 0.5rem 1.5rem 0.5rem 1rem;
+        }
+
+        .navbar-item.logo-link:hover {
+            background-color: rgba(50, 115, 220, 0.05) !important;
+        }
+
+        .navbar-logo {
+            height: 32px;
+            width: auto;
+            max-width: 120px;
+            display: block;
+            object-fit: contain;
+        }
+
+        .navbar-title {
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        /* 分隔线 */
+        .navbar-divider {
+            display: inline-block;
+            width: 1px;
+            height: 30px;
+            background-color: #e1e4e8;
+            margin: 0 0.5rem;
+            align-self: center;
+        }
+
+        /* 返回按钮 */
+        .navbar-item.back-button {
+            font-weight: 500;
+            color: #7a7a7a;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-item.back-button:hover {
+            color: #3273dc;
+            background-color: transparent;
+        }
+
+        .navbar-item.back-button .icon {
+            margin-right: 0.5rem;
+        }
+
+        /* Hero Section */
+        .hero.is-medium {
+            padding-top: 5rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+        }
+
+        .publication-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .conference-name {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #3273dc;
+            margin-bottom: 1.5rem;
+        }
+
+        .authors-section {
+            margin-bottom: 1rem;
+        }
+
+        .authors-list {
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #363636;
+        }
+
+        .author-link {
+            color: #3273dc;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .author-link:hover {
+            border-bottom-color: #3273dc;
+        }
+
+        .institution {
+            font-size: 1rem;
+            color: #7a7a7a;
+            margin-bottom: 2rem;
+        }
+
+        .publication-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .link-block .button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-block .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .link-block .button .icon {
+            margin-right: 0.5rem;
+        }
+
+        /* Section样式 */
+        .section {
+            padding: 3rem 1.5rem;
+        }
+
+        .content.has-text-justified p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #f5f7fa;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid #e1e4e8;
+        }
+
+        .footer p {
+            font-size: 0.95rem;
+            color: #7a7a7a;
+        }
+
+        .footer a {
+            color: #3273dc;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .footer a:hover {
+            border-bottom-color: #3273dc;
+        }
+
+        /* 响应式 */
+        @media screen and (max-width: 768px) {
+            .navbar-logo {
+                height: 28px;
+                max-width: 100px;
+            }
+            
+            .publication-title {
+                font-size: 1.75rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .navbar-logo {
+                height: 24px;
+                max-width: 80px;
+            }
+            
+            .publication-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 返回按钮 -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <!-- Logo + 实验室名称 - 使用Data URI或emoji作为占位符 -->
+            <a class="navbar-item logo-link" href="#" onclick="alert('返回主页'); return false;">
+                <!-- 临时用emoji代替logo，或者您可以用base64编码的图片 -->
+                <span style="font-size: 32px; line-height: 1;">🤖</span>
+                <span class="navbar-title">3DAgentWorldLab</span>
+            </a>
+            
+            <!-- 分隔线 -->
+            <span class="navbar-divider"></span>
+            
+            <!-- 返回按钮 -->
+            <a class="navbar-item back-button" href="#" onclick="alert('返回研究页面'); return false;">
+                <span class="icon">
+                    <i class="fas fa-arrow-left"></i>
+                </span>
+                <span>返回研究页面</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero is-medium">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">
+                            RGB-Only Gaussian Splatting SLAM for Unbounded Outdoor Scenes
+                        </h1>
+                        
+                        <h3 class="title is-3 conference-name">ICRA 2025</h3>
+                        
+                        <div class="authors-section">
+                            <h3 class="title is-5 authors-list">
+                                Sicheng Yu<sup>*</sup>, 
+                                Chong Cheng<sup>*</sup>, 
+                                Yifan Zhou, 
+                                Xiaojun Yang, 
+                                <a href="https://wanghao.tech/" class="author-link">Hao Wang</a><sup>✉</sup>
+                            </h3>
+                        </div>
+                        
+                        <div class="institution">
+                            <span class="author-block">
+                                The Hong Kong University of Science and Technology (GuangZhou)
+                            </span>
+                        </div>
+                        
+                        <div class="publication-links">
+                            <span class="link-block">
+                                <a href="https://arxiv.org/abs/2502.15633" 
+                                   target="_blank" 
+                                   class="button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fas fa-file-pdf" style="color: orangered;"></i>
+                                    </span>
+                                    <span>arXiv</span>
+                                </a>
+                            </span>
+                            
+                            <span class="link-block">
+                                <a href="https://github.com/3DAgentWorld/OpenGS-SLAM" 
+                                   target="_blank" 
+                                   class="button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fab fa-github"></i>
+                                    </span>
+                                    <span>Code</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abstract Section -->
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            3D Gaussian Splatting (3DGS) has become a popular solution in SLAM, as it can produce high-fidelity novel views. However, previous GS-based methods primarily target indoor scenes and rely on RGB-D sensors or pre-trained depth estimation models, hence underperforming in outdoor scenarios. To address this issue, we propose a RGB-only gaussian splatting SLAM method for unbounded outdoor scenes—OpenGS-SLAM.
+                        </p>
+                        <p>
+                            Our experiments on the Waymo dataset demonstrate that OpenGS-SLAM reduces tracking error to 9.8% of previous 3DGS methods, and achieves state-of-the-art results in novel view synthesis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer pt-4 pb-0">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content has-text-centered">
+                        <p>
+                            Website template based on
+                            <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Nerfies</a>,
+                            <a href="https://marigoldmonodepth.github.io" target="_blank">Marigold</a>
+                            and licensed under
+                            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC-BY-SA-4.0</a>.
+                        </p>
+                        <p style="margin-top: 1rem; color: #999; font-size: 0.9rem;">
+                            ℹ️ 这是独立版本，可以直接双击打开。Logo用emoji占位，实际使用时需要服务器。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

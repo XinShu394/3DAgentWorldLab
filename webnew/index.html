@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3DAgentWorldLab - Exploring Intelligent Agents in 3D Virtual Worlds</title>
+    <meta name="description" content="Research lab focusing on intelligent agents and 3D vision at HKUST(GZ)">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 全局导航栏 -->
+    <nav class="navbar-new">
+        <a href="index.html" class="logo-new">
+            <img src="images/logo.png" alt="3DAgentWorldLab Logo" class="navbar-logo-img">
+            <span>3DAgentWorldLab</span>
+        </a>
+        <ul class="nav-links-new">
+            <li><a href="index.html" class="active">HOME</a></li>
+            <li><a href="members.html">MEMBERS</a></li>
+            <li><a href="activity.html">ACTIVITY</a></li>
+            <li><a href="research.html">RESEARCH</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="hero-section-new">
+        <!-- 背景层 -->
+        <div class="background-layer">
+            <div class="gradient-bg"></div>
+            <div class="grid-pattern"></div>
+        </div>
+        
+        <!-- 装饰层 -->
+        <div class="decoration-layer">
+            <svg class="flowing-lines" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgba(255,255,255,0.05)" />
+                        <stop offset="50%" style="stop-color:rgba(255,255,255,0.15)" />
+                        <stop offset="100%" style="stop-color:rgba(255,255,255,0.05)" />
+                    </linearGradient>
+                </defs>
+                
+                <path d="M 0,200 Q 480,180 960,200 T 1920,200" stroke="url(#lineGradient)" stroke-width="2" fill="none" stroke-linecap="round" class="flow-line line-1" />
+                <path d="M 0,250 Q 480,230 960,250 T 1920,250" stroke="url(#lineGradient)" stroke-width="1.5" fill="none" stroke-linecap="round" class="flow-line line-2" />
+                <path d="M 0,300 Q 480,285 960,300 T 1920,300" stroke="url(#lineGradient)" stroke-width="2" fill="none" stroke-linecap="round" class="flow-line line-3" />
+                <path d="M 0,350 Q 480,340 960,350 T 1920,350" stroke="url(#lineGradient)" stroke-width="1.5" fill="none" stroke-linecap="round" class="flow-line line-4" />
+                <path d="M 0,400 Q 480,390 960,400 T 1920,400" stroke="url(#lineGradient)" stroke-width="1.8" fill="none" stroke-linecap="round" class="flow-line line-5" />
+            </svg>
+            
+            <div class="particles-container">
+                <div class="particle" style="left: 10%; top: 15%; animation-delay: 0s;"></div>
+                <div class="particle" style="left: 25%; top: 30%; animation-delay: -2s;"></div>
+                <div class="particle" style="left: 45%; top: 20%; animation-delay: -4s;"></div>
+                <div class="particle" style="left: 60%; top: 35%; animation-delay: -6s;"></div>
+                <div class="particle" style="left: 75%; top: 25%; animation-delay: -8s;"></div>
+                <div class="particle" style="left: 85%; top: 40%; animation-delay: -10s;"></div>
+                <div class="particle" style="left: 15%; top: 50%; animation-delay: -3s;"></div>
+                <div class="particle" style="left: 35%; top: 45%; animation-delay: -5s;"></div>
+            </div>
+            
+            <div class="geometric-frame">
+                <svg width="350" height="350" viewBox="0 0 350 350">
+                    <polygon points="70,70 280,70 280,280 70,280" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                    <polygon points="100,120 310,120 310,330 100,330" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+                    <line x1="70" y1="70" x2="100" y2="120" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                    <line x1="280" y1="70" x2="310" y2="120" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                    <line x1="280" y1="280" x2="310" y2="330" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                    <line x1="70" y1="280" x2="100" y2="330" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- 内容层 -->
+        <div class="content-layer">
+            <div class="container-new">
+                
+                <!-- 主内容区 -->
+                <div class="hero-content-new">
+                    <h1 class="main-title-new">
+                        <span class="title-line">3DAgentWorldLab</span>
+                    </h1>
+                    
+                    <div class="title-decoration">
+                        <div class="decoration-line"></div>
+                    </div>
+                    
+                    <p class="subtitle-new">
+                        Exploring Intelligent Agents in 3D Virtual Worlds
+                    </p>
+                    
+                    <p class="description-new">
+                        Advancing research in multi-agent systems, 3D perception, 
+                        and embodied AI through cutting-edge simulation environments.
+                    </p>
+                    
+                    <div class="cta-buttons-new">
+                        <a href="research.html" class="btn-primary-new">Explore Research</a>
+                        <a href="members.html" class="btn-secondary-new">Join Us</a>
+                    </div>
+                </div>
+                
+                <!-- 滚动提示 -->
+                <div class="scroll-indicator-new">
+                    <span>Scroll to discover</span>
+                    <svg class="arrow-icon-new" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M12 5v14m0 0l-7-7m7 7l7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Main Content Section - Integrated -->
+    <section class="page-section" style="background: var(--bg-dark); padding-top: 100px;">
+        <div class="content-layer">
+            <div class="container-new">
+                <!-- Director Section with Side Layout -->
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 60px; max-width: 1200px; margin: 0 auto 60px;">
+                    <!-- Left: Avatar + Director Info -->
+                    <div style="display: flex; align-items: center; gap: 30px; flex: 1;">
+                        <!-- Circular Avatar with Dashed Border -->
+                        <div style="position: relative; flex-shrink: 0;">
+                            <div style="width: 160px; height: 160px; border: 3px dashed rgba(255, 255, 255, 0.3); border-radius: 50%; padding: 10px;">
+                                <div style="width: 100%; height: 100%; border-radius: 50%; background: rgba(42, 45, 75, 0.6); display: flex; align-items: center; justify-content: center; font-size: 50px; font-weight: 700; color: var(--text-primary);">
+                                    照片
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Director Info -->
+                        <div style="flex: 1;">
+                            <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-tertiary); letter-spacing: 2px; margin-bottom: 8px; text-transform: uppercase;">
+                                Director
+                            </div>
+                            <h2 style="font-size: 2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; line-height: 1.2;">
+                                Hao WANG
+                            </h2>
+                            <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 6px; line-height: 1.5;">
+                                Assistant Professor
+                            </p>
+                            <p style="font-size: 0.9rem; color: var(--text-tertiary); line-height: 1.5;">
+                                Artificial Intelligence Thrust<br>
+                                Information Hub, HKUST(GZ)
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Large Title -->
+                    <div style="text-align: right; flex-shrink: 0;">
+                        <div style="font-size: 2.5rem; font-weight: 300; color: rgba(255, 255, 255, 0.15); line-height: 1.1; margin-bottom: 6px; letter-spacing: 2px;">
+                            3DAgent
+                        </div>
+                        <div style="font-size: 3.5rem; font-weight: 700; color: var(--text-primary); line-height: 1; margin-bottom: 20px; text-shadow: 0 0 30px var(--glow-primary);">
+                            PEOPLE
+                        </div>
+                        <a href="members.html" class="more-link" style="display: inline-flex; align-items: center; gap: 10px; font-size: 1rem; font-weight: 600; color: var(--text-primary); text-decoration: none; transition: all 0.3s ease;">
+                            MORE
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Research Directions -->
+                <!-- Section Title -->
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 30px; color: var(--text-primary); letter-spacing: 2px;">
+                        RESEARCH DIRECTIONS
+                    </h2>
+                    
+                    <!-- Tab Navigation -->
+                    <div style="display: flex; justify-content: center; gap: 50px; border-bottom: 2px solid rgba(99, 102, 241, 0.5); padding-bottom: 12px; max-width: 350px; margin: 0 auto;">
+                        <button class="research-tab-btn active" data-tab="agent" style="background: none; border: none; font-size: 1.5rem; font-weight: 700; color: var(--text-primary); cursor: pointer; position: relative; padding: 0 6px; transition: all 0.3s ease;">
+                            Agent
+                        </button>
+                        <button class="research-tab-btn" data-tab="3d" style="background: none; border: none; font-size: 1.5rem; font-weight: 700; color: var(--text-tertiary); cursor: pointer; position: relative; padding: 0 6px; transition: all 0.3s ease;">
+                            3D
+                        </button>
+                    </div>
+                </div>
+            
+                <!-- Agent Applications (Active by default) -->
+                <div id="agent-research" class="research-content" style="display: block;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; max-width: 1000px; margin: 0 auto;">
+                        <!-- Autonomous Agents -->
+                        <div class="highlight-card" style="text-align: center; padding: 24px 16px; background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 10px; backdrop-filter: blur(10px); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); border: 2px solid rgba(99, 102, 241, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 2rem; box-shadow: 0 6px 24px rgba(99, 102, 241, 0.3);">
+                                🤖
+                            </div>
+                            <p style="font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0;">
+                                Autonomous<br>Agents
+                            </p>
+                        </div>
+                        
+                        <!-- Multi-Agent Systems -->
+                        <div class="highlight-card" style="text-align: center; padding: 24px 16px; background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 10px; backdrop-filter: blur(10px); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); border: 2px solid rgba(99, 102, 241, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 2rem; box-shadow: 0 6px 24px rgba(99, 102, 241, 0.3);">
+                                🧠
+                            </div>
+                            <p style="font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0;">
+                                Multi-Agent<br>Systems
+                            </p>
+                        </div>
+                        
+                        <!-- Embodied AI -->
+                        <div class="highlight-card" style="text-align: center; padding: 24px 16px; background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 10px; backdrop-filter: blur(10px); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); border: 2px solid rgba(99, 102, 241, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 2rem; box-shadow: 0 6px 24px rgba(99, 102, 241, 0.3);">
+                                🎮
+                            </div>
+                            <p style="font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0;">
+                                Embodied<br>AI
+                            </p>
+                        </div>
+                        
+                        <!-- Agent Communication -->
+                        <div class="highlight-card" style="text-align: center; padding: 24px 16px; background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 10px; backdrop-filter: blur(10px); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); border: 2px solid rgba(99, 102, 241, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 2rem; box-shadow: 0 6px 24px rgba(99, 102, 241, 0.3);">
+                                💬
+                            </div>
+                            <p style="font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0;">
+                                Agent<br>Communication
+                            </p>
+                        </div>
+                        
+                        <!-- Task Planning -->
+                        <div class="highlight-card" style="text-align: center; padding: 24px 16px; background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 10px; backdrop-filter: blur(10px); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); border: 2px solid rgba(99, 102, 241, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 2rem; box-shadow: 0 6px 24px rgba(99, 102, 241, 0.3);">
+                                🎯
+                            </div>
+                            <p style="font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0;">
+                                Task<br>Planning
+                            </p>
+                        </div>
+                        
+                        <!-- Interactive Learning -->
+                        <div class="highlight-card" style="text-align: center; padding: 24px 16px; background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 10px; backdrop-filter: blur(10px); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); border: 2px solid rgba(99, 102, 241, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 2rem; box-shadow: 0 6px 24px rgba(99, 102, 241, 0.3);">
+                                💡
+                            </div>
+                            <p style="font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0;">
+                                Interactive<br>Learning
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- 3D Applications (Hidden by default) -->
+                <div id="3d-research" class="research-content" style="display: none;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; max-width: 1000px; margin: 0 auto;">
+                        <!-- 3D Reconstruction -->
+                        <div class="highlight-card" style="text-align: center; padding: 24px 16px; background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 10px; backdrop-filter: blur(10px); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(168, 85, 247, 0.2)); border: 2px solid rgba(139, 92, 246, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 2rem; box-shadow: 0 6px 24px rgba(139, 92, 246, 0.3);">
+                                📦
+                            </div>
+                            <p style="font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0;">
+                                3D<br>Reconstruction
+                            </p>
+                        </div>
+                        
+                        <!-- Neural Rendering -->
+                        <div class="highlight-card" style="text-align: center; padding: 24px 16px; background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 10px; backdrop-filter: blur(10px); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(168, 85, 247, 0.2)); border: 2px solid rgba(139, 92, 246, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 2rem; box-shadow: 0 6px 24px rgba(139, 92, 246, 0.3);">
+                                🎨
+                            </div>
+                            <p style="font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0;">
+                                Neural<br>Rendering
+                            </p>
+                        </div>
+                        
+                        <!-- Scene Understanding -->
+                        <div class="highlight-card" style="text-align: center; padding: 24px 16px; background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 10px; backdrop-filter: blur(10px); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(168, 85, 247, 0.2)); border: 2px solid rgba(139, 92, 246, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 2rem; box-shadow: 0 6px 24px rgba(139, 92, 246, 0.3);">
+                                🌍
+                            </div>
+                            <p style="font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0;">
+                                Scene<br>Understanding
+                            </p>
+                        </div>
+                        
+                        <!-- Geometric Learning -->
+                        <div class="highlight-card" style="text-align: center; padding: 24px 16px; background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 10px; backdrop-filter: blur(10px); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(168, 85, 247, 0.2)); border: 2px solid rgba(139, 92, 246, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 2rem; box-shadow: 0 6px 24px rgba(139, 92, 246, 0.3);">
+                                📐
+                            </div>
+                            <p style="font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0;">
+                                Geometric<br>Learning
+                            </p>
+                        </div>
+                        
+                        <!-- 3D Vision -->
+                        <div class="highlight-card" style="text-align: center; padding: 24px 16px; background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 10px; backdrop-filter: blur(10px); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(168, 85, 247, 0.2)); border: 2px solid rgba(139, 92, 246, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 2rem; box-shadow: 0 6px 24px rgba(139, 92, 246, 0.3);">
+                                👁️
+                            </div>
+                            <p style="font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0;">
+                                3D<br>Vision
+                            </p>
+                        </div>
+                        
+                        <!-- 3D Generation -->
+                        <div class="highlight-card" style="text-align: center; padding: 24px 16px; background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 10px; backdrop-filter: blur(10px); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(168, 85, 247, 0.2)); border: 2px solid rgba(139, 92, 246, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 2rem; box-shadow: 0 6px 24px rgba(139, 92, 246, 0.3);">
+                                ✨
+                            </div>
+                            <p style="font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0;">
+                                3D<br>Generation
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- View All Research Link -->
+                <div style="text-align: center; margin-top: 24px; margin-bottom: 60px;">
+                    <a href="research.html" class="btn-secondary-new" style="padding: 12px 32px; font-size: 1rem;">
+                        VIEW ALL RESEARCH →
+                    </a>
+                </div>
+
+                <!-- Team Activities -->
+                <!-- Section Title -->
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary); letter-spacing: 2px; margin-bottom: 12px;">
+                        TEAM ACTIVITIES
+                    </h2>
+                    <p style="font-size: 1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                        Moments that strengthen our bonds and showcase our team spirit
+                    </p>
+                </div>
+                
+                <!-- Activity Grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
+                    <!-- Activity Card 1 -->
+                    <div class="card-new" style="background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; overflow: hidden; transition: all 0.3s ease; cursor: pointer;">
+                        <div style="aspect-ratio: 16/10; background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3)); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                            🍽️
+                        </div>
+                        <div style="padding: 20px;">
+                            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">Team Dinner</h3>
+                            <p style="font-size: 0.875rem; color: var(--text-tertiary); line-height: 1.5;">Celebrating milestones together</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity Card 2 -->
+                    <div class="card-new" style="background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; overflow: hidden; transition: all 0.3s ease; cursor: pointer;">
+                        <div style="aspect-ratio: 16/10; background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(168, 85, 247, 0.3)); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                            🎉
+                        </div>
+                        <div style="padding: 20px;">
+                            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">Lab Celebration</h3>
+                            <p style="font-size: 0.875rem; color: var(--text-tertiary); line-height: 1.5;">Conference paper acceptance party</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity Card 3 -->
+                    <div class="card-new" style="background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; overflow: hidden; transition: all 0.3s ease; cursor: pointer;">
+                        <div style="aspect-ratio: 16/10; background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(59, 130, 246, 0.3)); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                            ☕
+                        </div>
+                        <div style="padding: 20px;">
+                            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">Coffee Chat</h3>
+                            <p style="font-size: 0.875rem; color: var(--text-tertiary); line-height: 1.5;">Casual team bonding moments</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- View All Activity Link -->
+                <div style="text-align: center; margin-top: 24px;">
+                    <a href="activity.html" class="btn-secondary-new" style="padding: 12px 32px; font-size: 1rem;">
+                        VIEW ALL ACTIVITIES →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer class="contact-footer">
+        <div class="footer-content">
+            <div class="footer-title">
+                <h2>Contact</h2>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:info@3dagentworld.lab">General Info</a>
+                <a href="#careers">Careers</a>
+                <a href="mailto:press@3dagentworld.lab">Press Inquiries</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="Twitter">𝕏</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2024 3DAgentWorldLab</p>
+            <p>HKUST (GZ)</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Research Direction Tabs
+        document.querySelectorAll('.research-tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.research-tab-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.style.color = 'var(--text-tertiary)';
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                this.style.color = 'var(--text-primary)';
+                
+                // Hide all content
+                document.querySelectorAll('.research-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                
+                // Show selected content
+                const tab = this.dataset.tab;
+                document.getElementById(tab + '-research').style.display = 'block';
+            });
+        });
+
+        // Simplified Snap Scrolling Effect for Index Page
+        let isScrolling = false;
+        const sections = [document.querySelector('.hero-section-new'), document.querySelector('.page-section')];
+        const heroHeight = sections[0].offsetHeight;
+
+        window.addEventListener('wheel', function(e) {
+            // 如果正在滚动动画中，不处理
+            if (isScrolling) return;
+            
+            const scrollY = window.scrollY;
+            const scrollingDown = e.deltaY > 0;
+            const scrollingUp = e.deltaY < 0;
+            
+            // 在Hero Section时，任何向下滚动都跳转到Content Section
+            if (scrollingDown && scrollY < heroHeight - 50) {
+                e.preventDefault();
+                isScrolling = true;
+                
+                sections[1].scrollIntoView({ behavior: 'smooth' });
+                
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 1000);
+            } 
+            // 在Content Section顶部时，向上滚动返回Hero Section
+            else if (scrollingUp && scrollY >= heroHeight - 50 && scrollY < heroHeight + 300) {
+                e.preventDefault();
+                isScrolling = true;
+                
+                sections[0].scrollIntoView({ behavior: 'smooth' });
+                
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 1000);
+            }
+        }, { passive: false });
+    </script>
+</body>
+</html>
+

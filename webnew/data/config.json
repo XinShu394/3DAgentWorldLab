@@ -1,0 +1,55 @@
+{
+  "site": {
+    "title": "3DAgentWorldLab",
+    "title_zh": "3DAgentWorld实验室",
+    "description": "Research lab focusing on 3D Vision, Autonomous Agents, and Embodied AI",
+    "description_zh": "专注于三维视觉、自主智能体和具身AI的研究实验室",
+    "url": "https://3dagentworld.lab",
+    "keywords": [
+      "3D Vision",
+      "Autonomous Agents",
+      "Embodied AI",
+      "Computer Vision",
+      "Artificial Intelligence"
+    ]
+  },
+  "navigation": {
+    "items": [
+      {
+        "name": "HOME",
+        "name_zh": "首页",
+        "url": "index.html",
+        "active": true
+      },
+      {
+        "name": "MEMBERS",
+        "name_zh": "成员",
+        "url": "members.html",
+        "active": false
+      },
+      {
+        "name": "RESEARCH",
+        "name_zh": "研究",
+        "url": "research.html",
+        "active": false
+      },
+      {
+        "name": "ACTIVITY",
+        "name_zh": "活动",
+        "url": "activity.html",
+        "active": false
+      }
+    ]
+  },
+  "contact": {
+    "email": "info@3dagentworld.lab",
+    "address": "HKUST(GZ), Guangzhou, China",
+    "address_zh": "香港科技大学（广州），广州，中国"
+  },
+  "social": {
+    "github": "https://github.com/3dagentworld",
+    "twitter": "",
+    "linkedin": ""
+  }
+}
+

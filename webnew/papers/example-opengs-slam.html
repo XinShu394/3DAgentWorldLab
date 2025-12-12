@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB-Only Gaussian Splatting SLAM for Unbounded Outdoor Scenes - 3DAgentWorldLab</title>
+    <meta name="description" content="A novel RGB-only Gaussian splatting SLAM method for unbounded outdoor scenes, achieving state-of-the-art performance in novel view rendering.">
+    
+    <!-- Bulma CSS Framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="paper-detail.css">
+</head>
+<body>
+    <!-- 返回按钮 -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item logo-link" href="../index.html">
+                <img src="../images/logo.png" alt="3DAgentWorldLab Logo" class="navbar-logo">
+                <span class="navbar-title">3DAgentWorldLab</span>
+            </a>
+            <span class="navbar-divider"></span>
+            <a class="navbar-item back-button" href="../research.html">
+                <span class="icon">
+                    <i class="fas fa-arrow-left"></i>
+                </span>
+                <span>返回研究页面</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section - 论文标题和作者 -->
+    <section class="hero is-medium">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <!-- 论文标题 -->
+                        <h1 class="title is-1 publication-title">
+                            RGB-Only Gaussian Splatting SLAM for Unbounded Outdoor Scenes
+                        </h1>
+                        
+                        <!-- 会议/期刊信息 -->
+                        <h3 class="title is-3 conference-name">ICRA 2025</h3>
+                        
+                        <!-- 作者信息 -->
+                        <div class="authors-section">
+                            <h3 class="title is-5 authors-list">
+                                Sicheng Yu<sup>*</sup>, 
+                                Chong Cheng<sup>*</sup>, 
+                                Yifan Zhou, 
+                                Xiaojun Yang, 
+                                <a href="https://wanghao.tech/" class="author-link">Hao Wang</a><sup>✉</sup>
+                            </h3>
+                        </div>
+                        
+                        <!-- 机构信息 -->
+                        <div class="institution">
+                            <span class="author-block">
+                                The Hong Kong University of Science and Technology (GuangZhou)
+                            </span>
+                        </div>
+                        
+                        <!-- 论文链接按钮 -->
+                        <div class="publication-links">
+                            <!-- arXiv 链接 -->
+                            <span class="link-block">
+                                <a href="https://arxiv.org/abs/2502.15633" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer" 
+                                   class="button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fas fa-file-pdf" style="color: orangered;"></i>
+                                    </span>
+                                    <span>arXiv</span>
+                                </a>
+                            </span>
+                            
+                            <!-- Code 链接 -->
+                            <span class="link-block">
+                                <a href="https://github.com/3DAgentWorld/OpenGS-SLAM" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer" 
+                                   class="button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fab fa-github"></i>
+                                    </span>
+                                    <span>Code</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abstract Section -->
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            3D Gaussian Splatting (3DGS) has become a popular solution in SLAM, as it can produce high-fidelity novel views. However, previous GS-based methods primarily target indoor scenes and rely on RGB-D sensors or pre-trained depth estimation models, hence underperforming in outdoor scenarios. To address this issue, we propose a RGB-only gaussian splatting SLAM method for unbounded outdoor scenes—OpenGS-SLAM.
+                        </p>
+                        <p>
+                            Technically, we first employ a pointmap regression network to generate consistent pointmaps between frames for pose estimation. Compared to commonly used depth maps, pointmaps include spatial relationships and scene geometry across multiple views, enabling robust camera pose estimation.
+                        </p>
+                        <p>
+                            Then, we propose integrating the estimated camera poses with 3DGS rendering as an end-to-end differentiable pipeline. Our method achieves simultaneous optimization of camera poses and 3DGS scene parameters, significantly enhancing system tracking accuracy. Specifically, we also design an adaptive scale mapper for the pointmap regression network, which provides more accurate pointmap mapping to the 3DGS map representation.
+                        </p>
+                        <p>
+                            Our experiments on the Waymo dataset demonstrate that OpenGS-SLAM reduces tracking error to 9.8% of previous 3DGS methods, and achieves state-of-the-art results in novel view synthesis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section - 图片轮播 -->
+    <section class="section">
+        <div class="container">
+            <h2 class="title is-3 has-text-centered">Novel View Rendering</h2>
+            
+            <div class="description-text">
+                <p>
+                    For unbounded outdoor scenes, our method renders high-fidelity images, accurately capturing details of vehicles, streets, and buildings. In contrast, MonoGS and GlORIE-SLAM exhibit rendering distortions and blurriness.
+                </p>
+            </div>
+            
+            <!-- 图片轮播 - 使用占位图 -->
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item is-active">
+                        <figure class="image">
+                            <img src="https://via.placeholder.com/1600x900/f5f7fa/3273dc?text=Novel+View+Rendering+1" 
+                                 alt="Novel View Rendering Comparison 1">
+                        </figure>
+                    </div>
+                    <div class="carousel-item">
+                        <figure class="image">
+                            <img src="https://via.placeholder.com/1600x900/f5f7fa/48c774?text=Novel+View+Rendering+2" 
+                                 alt="Novel View Rendering Comparison 2">
+                        </figure>
+                    </div>
+                    <div class="carousel-item">
+                        <figure class="image">
+                            <img src="https://via.placeholder.com/1600x900/f5f7fa/ffdd57?text=Novel+View+Rendering+3" 
+                                 alt="Novel View Rendering Comparison 3">
+                        </figure>
+                    </div>
+                </div>
+                
+                <!-- 轮播导航按钮 -->
+                <button class="carousel-navigation left" aria-label="Previous image">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-navigation right" aria-label="Next image">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- 轮播指示器 -->
+                <div class="carousel-indicators"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method Section -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-full">
+                    <div class="content has-text-justified">
+                        <!-- 方法流程图 -->
+                        <h2 class="title is-3 has-text-centered">SLAM System Pipeline</h2>
+                        <p>
+                            Each frame inputs an RGB image for tracking. The current and previous frames are input as a pair into the Pointmap Regression network for pose estimation, followed by pose optimization based on the current Gaussian map. At keyframes, mapping is performed and the pointmap is processed by the Adaptive Scale Mapper for new Gaussian mapping. Camera pose and Gaussian map are jointly optimized in the local window.
+                        </p>
+                        <figure class="image">
+                            <img src="https://via.placeholder.com/1200x400/f5f7fa/3273dc?text=SLAM+System+Pipeline" 
+                                 alt="SLAM System Pipeline">
+                        </figure>
+                        
+                        <!-- 对比结果 -->
+                        <h2 class="title is-3 has-text-centered mt-6">Comparison with Other Methods</h2>
+                        <p>
+                            We compare our method with other RGB-only SLAM approaches supporting novel view rendering on the Waymo dataset. ATE RMSE [m] for tracking; PSNR, SSIM, and LPIPS for novel view rendering. The best results are highlighted in red, the second-best in orange. Our method achieves state-of-the-art performance in novel view rendering and reduces tracking error to 9.8% compared to MonoGS, which is also based on Gaussian scene representation.
+                        </p>
+                        <figure class="image comparison-table">
+                            <img src="https://via.placeholder.com/800x600/f5f7fa/48c774?text=Comparison+Results+Table" 
+                                 alt="Comparison Results Table">
+                        </figure>
+                        
+                        <!-- 轨迹对比 -->
+                        <h3 class="title is-4 has-text-centered mt-6">Comparison of Tracking Trajectories with MonoGS</h3>
+                        <p>
+                            Compared to MonoGS, which tracks in a similar manner, our tracking trajectories are noticeably more accurate, with no significant drift, and effectively handle sharp turns, demonstrating the strength of our approach.
+                        </p>
+                        <figure class="image">
+                            <img src="https://via.placeholder.com/1200x600/f5f7fa/ffdd57?text=Trajectory+Comparison" 
+                                 alt="Trajectory Comparison">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BibTeX Section -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title is-3">Citation</h2>
+            <pre class="bibtex-code"><code>@inproceedings{yu2025opengsslam,
+    title={RGB-Only Gaussian Splatting SLAM for Unbounded Outdoor Scenes},
+    author={Yu, Sicheng and Cheng, Chong and Zhou, Yifan and Yang, Xiaojun and Wang, Hao},
+    booktitle={International Conference on Robotics and Automation (ICRA)},
+    year={2025}
+}</code></pre>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer pt-4 pb-0">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content has-text-centered">
+                        <p>
+                            Website template based on
+                            <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Nerfies</a>,
+                            <a href="https://marigoldmonodepth.github.io" target="_blank">Marigold</a>
+                            and licensed under
+                            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC-BY-SA-4.0</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="paper-detail.js"></script>
+</body>
+</html>
+

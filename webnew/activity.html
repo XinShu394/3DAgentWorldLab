@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity - 3DAgentWorldLab</title>
+    <meta name="description" content="Latest activities and news from 3DAgentWorldLab">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page Section -->
+    <main class="page-section">
+        <!-- 背景层 -->
+        <div class="background-layer">
+            <div class="gradient-bg"></div>
+            <div class="grid-pattern"></div>
+        </div>
+        
+        <!-- 装饰层 -->
+        <div class="decoration-layer">
+            <svg class="flowing-lines" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgba(255,255,255,0.05)" />
+                        <stop offset="50%" style="stop-color:rgba(255,255,255,0.15)" />
+                        <stop offset="100%" style="stop-color:rgba(255,255,255,0.05)" />
+                    </linearGradient>
+                </defs>
+                
+                <path d="M 0,200 Q 480,180 960,200 T 1920,200" stroke="url(#lineGradient)" stroke-width="2" fill="none" stroke-linecap="round" class="flow-line line-1" />
+                <path d="M 0,300 Q 480,285 960,300 T 1920,300" stroke="url(#lineGradient)" stroke-width="2" fill="none" stroke-linecap="round" class="flow-line line-3" />
+                <path d="M 0,400 Q 480,390 960,400 T 1920,400" stroke="url(#lineGradient)" stroke-width="1.8" fill="none" stroke-linecap="round" class="flow-line line-5" />
+            </svg>
+            
+            <div class="particles-container">
+                <div class="particle" style="left: 10%; top: 15%; animation-delay: 0s;"></div>
+                <div class="particle" style="left: 45%; top: 20%; animation-delay: -4s;"></div>
+                <div class="particle" style="left: 75%; top: 25%; animation-delay: -8s;"></div>
+                <div class="particle" style="left: 35%; top: 45%; animation-delay: -5s;"></div>
+            </div>
+        </div>
+        
+        <!-- 内容层 -->
+        <div class="content-layer">
+            <!-- 顶部导航 -->
+            <nav class="navbar-new">
+                <a href="index.html" class="logo-new">
+                    <img src="images/logo.png" alt="3DAgentWorldLab Logo" class="navbar-logo-img">
+                    <span>3DAgentWorldLab</span>
+                </a>
+                <ul class="nav-links-new">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="members.html">MEMBERS</a></li>
+                    <li><a href="activity.html" class="active">ACTIVITY</a></li>
+                    <li><a href="research.html">RESEARCH</a></li>
+                </ul>
+            </nav>
+            
+            <!-- 页面内容 -->
+            <div class="page-content-new">
+                <div class="container-new">
+                    <!-- 页面标题 -->
+                    <div class="page-header-new">
+                        <h1 class="page-title-new">Activities & News</h1>
+                        <p class="page-description-new">
+                            Stay updated with our latest events, workshops, and milestones
+                        </p>
+                    </div>
+                    
+                    <!-- 活动网格（数据驱动） -->
+                    <div id="activities-container" class="cards-grid-new">
+                        <div class="loading-message">Loading activities...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Contact Footer -->
+    <footer class="contact-footer">
+        <div class="footer-content">
+            <div class="footer-title">
+                <h2>Contact</h2>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:info@3dagentworld.lab">General Info</a>
+                <a href="#careers">Careers</a>
+                <a href="mailto:press@3dagentworld.lab">Press Inquiries</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="Twitter">𝕏</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2024 3DAgentWorldLab</p>
+            <p>HKUST (GZ)</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

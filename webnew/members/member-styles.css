@@ -1,0 +1,83 @@
+/* ===================================
+   MEMBER PROFILE PAGE STYLES
+   渐变流线风格的成员详情页样式
+   =================================== */
+
+/* 继承主样式，这里添加额外的成员页面专用样式 */
+
+.back-navigation {
+    margin-bottom: var(--spacing-lg);
+}
+
+.back-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.2s ease;
+}
+
+.back-link:hover {
+    border-bottom: 1px solid var(--accent);
+}
+
+.profile-header {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.profile-card {
+    background: rgba(42, 45, 75, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: var(--spacing-xl);
+    backdrop-filter: blur(10px);
+}
+
+.profile-name {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    text-shadow: 0 0 20px var(--glow-primary);
+}
+
+.profile-position {
+    font-size: var(--text-xl);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.profile-description {
+    font-size: var(--text-base);
+    color: var(--text-tertiary);
+    line-height: 1.8;
+    max-width: 800px;
+}
+
+.profile-links {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.profile-link-btn {
+    padding: 12px 24px;
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.profile-link-btn:hover {
+    border-color: var(--accent);
+    background: rgba(123, 131, 197, 0.1);
+    box-shadow: 0 0 20px var(--glow-accent);
+}
+
