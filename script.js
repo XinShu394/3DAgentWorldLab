@@ -185,11 +185,31 @@ class MembersDataLoader {
     createMemberCard(member, category) {
         const profileUrl = member.website || 'members/member-template.html';
         
-        return `
-            <div class="card-new" data-category="${category}">
+        // 处理图片路径：如果是Faculty且有照片，确保路径正确
+        let photoHtml = '';
+        if (member.photo) {
+            // 移除可能导致问题的 ../ 前缀（如果有的话）
+            const cleanPhotoPath = member.photo.replace('../', '');
+            
+            photoHtml = `
+                <div class="card-avatar-new">
+                    <img src="${cleanPhotoPath}" 
+                         alt="${member.name}" 
+                         style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'avatar-placeholder-new\'>照片</div>';">
+                </div>
+            `;
+        } else {
+            photoHtml = `
                 <div class="card-avatar-new">
                     <div class="avatar-placeholder-new">照片</div>
                 </div>
+            `;
+        }
+        
+        return `
+            <div class="card-new" data-category="${category}">
+                ${photoHtml}
                 <h3 class="card-title-new">${member.name}</h3>
                 <p class="card-subtitle-new">${member.position}</p>
                 <p class="card-description-new">${member.group || member.department || ''}</p>
