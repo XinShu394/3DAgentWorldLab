@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers' Day - 3DAgentWorldLab</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* 复用样式 */
+        .activity-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            padding-top: 40px;
+        }
+        .activity-title {
+            font-family: var(--font-display);
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .activity-meta {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            color: var(--text-secondary);
+            font-size: var(--text-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        .activity-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+            margin-bottom: var(--spacing-2xl);
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        .gallery-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .activity-content {
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: var(--text-lg);
+            line-height: 1.8;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .back-nav { margin-bottom: 40px; }
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: var(--text-base);
+            transition: color 0.3s ease;
+        }
+        .back-link:hover { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <main class="page-section">
+        <div class="background-layer">
+            <div class="gradient-bg"></div>
+            <div class="grid-pattern"></div>
+        </div>
+        
+        <div class="content-layer">
+            <nav class="navbar-new">
+                <a href="../index.html" class="logo-new">
+                    <img src="../images/logo.png" alt="Logo" class="navbar-logo-img">
+                    <span>3DAgentWorldLab</span>
+                </a>
+                <ul class="nav-links-new">
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="../members.html">MEMBERS</a></li>
+                    <li><a href="../research.html">RESEARCH</a></li>
+                    <li><a href="../activity.html" class="active">ACTIVITY</a></li>
+                </ul>
+            </nav>
+            
+            <div class="page-content-new">
+                <div class="container-new">
+                    <div class="back-nav">
+                        <a href="../activity.html" class="back-link">← Back to Activities</a>
+                    </div>
+
+                    <div class="activity-header">
+                        <h1 class="activity-title">Teachers' Day Celebration</h1>
+                        <div class="activity-meta">
+                            <span>📅 Sep 10, 2025</span>
+                            <span>📍 HKUST(GZ)</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-gallery">
+                        <div class="gallery-item">
+                            <img src="../images/activity/2025.09.10教师节.png" alt="Teachers' Day" class="gallery-img">
+                        </div>
+                    </div>
+
+                    <div class="activity-content">
+                        <p>
+                            Celebrating Teachers' Day with our beloved Professor Wang! 
+                            <br><br>
+                            We expressed our gratitude for his guidance and mentorship. 
+                            It was a heartwarming gathering filled with joy and appreciation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+

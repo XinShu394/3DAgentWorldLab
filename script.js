@@ -348,11 +348,22 @@ class ActivityDataLoader {
 
     createActivityCard(activity) {
         return `
-            <div class="card-new">
-                <div class="card-subtitle-new">${activity.date || ''}</div>
-                <h3 class="card-title-new">${activity.title}</h3>
-                <p class="card-description-new">${activity.description || ''}</p>
-                ${activity.link ? `<a href="${activity.link}" class="btn-secondary-new" style="margin-top: 16px; padding: 8px 24px; font-size: 0.875rem;" target="_blank">了解更多 →</a>` : ''}
+            <div class="card-new" style="padding-bottom: 20px;">
+                ${activity.image ? `
+                    <div style="margin: -32px -32px 20px -32px; height: 200px; overflow: hidden; border-radius: 20px 20px 0 0;">
+                        <img src="${activity.image}" alt="${activity.title}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                ` : ''}
+                <div class="card-subtitle-new" style="color: var(--accent); margin-bottom: 8px;">
+                    ${activity.date || ''} • ${activity.location || ''}
+                </div>
+                <h3 class="card-title-new" style="margin-bottom: 12px;">${activity.title}</h3>
+                <p class="card-description-new" style="margin-bottom: 24px;">${activity.description || ''}</p>
+                ${activity.link ? `
+                    <a href="${activity.link}" class="btn-secondary-new" style="display: inline-block; padding: 8px 24px; font-size: 0.875rem;" target="_blank">
+                        View Details →
+                    </a>
+                ` : ''}
             </div>
         `;
     }

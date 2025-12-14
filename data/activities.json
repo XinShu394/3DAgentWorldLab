@@ -1,45 +1,24 @@
 {
   "activities": [
     {
-      "id": "activity001",
-      "title": "3DAgentWorldLab 研讨会 2024",
-      "title_en": "3DAgentWorldLab Workshop 2024",
-      "date": "2024-10-15",
-      "location": "HKUST(GZ), Guangzhou",
-      "description": "我们实验室举办了年度研讨会，分享最新的研究成果和未来方向。来自多所大学的研究人员参加了此次活动。",
-      "description_en": "Our lab hosted the annual workshop to share the latest research findings and future directions. Researchers from multiple universities attended the event.",
-      "type": "workshop",
-      "images": [
-        "images/activities/activity001_1.jpg",
-        "images/activities/activity001_2.jpg"
-      ],
-      "participants": ["Hao WANG", "CHENG Chong", "ZHANG Zheng"],
-      "link": ""
+      "id": "act001",
+      "title": "Lab Team Dinner",
+      "date": "2025-10-10",
+      "location": "Guangzhou",
+      "description": "Team building dinner with all lab members.",
+      "image": "images/activity/2025.10.10聚餐.png",
+      "link": "activities/dinner-2025.html",
+      "type": "event"
     },
     {
-      "id": "activity002",
-      "title": "CVPR 2024 论文发表",
-      "title_en": "CVPR 2024 Paper Publication",
-      "date": "2024-06-18",
-      "location": "Seattle, USA",
-      "description": "我们的论文《Multi-Agent Systems in 3D Virtual Worlds》在CVPR 2024上发表，并进行了口头报告。",
-      "description_en": "Our paper 'Multi-Agent Systems in 3D Virtual Worlds' was published at CVPR 2024 with an oral presentation.",
-      "type": "publication",
-      "images": [],
-      "participants": ["Hao WANG", "CHENG Chong"],
-      "link": "papers/paper001.pdf"
-    }
-  ],
-  "news": [
-    {
-      "id": "news001",
-      "title": "实验室成立一周年",
-      "title_en": "Lab First Anniversary",
-      "date": "2024-09-01",
-      "content": "3DAgentWorldLab成立一周年！感谢所有成员的努力和贡献。",
-      "content_en": "3DAgentWorldLab celebrates its first anniversary! Thank you to all members for their hard work and contributions.",
-      "link": ""
+      "id": "act002",
+      "title": "Teachers' Day Celebration",
+      "date": "2025-09-10",
+      "location": "HKUST(GZ)",
+      "description": "Celebrating Teachers' Day with Prof. Wang.",
+      "image": "images/activity/2025.09.10教师节.png",
+      "link": "activities/teachers-day-2025.html",
+      "type": "event"
     }
   ]
 }
-
