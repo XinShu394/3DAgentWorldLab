@@ -196,13 +196,15 @@ class MembersDataLoader {
                     <img src="${cleanPhotoPath}" 
                          alt="${member.name}" 
                          style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"
-                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'avatar-placeholder-new\'>照片</div>';">
+                         onerror="this.onerror=null; this.src='images/人物.png';">
                 </div>
             `;
         } else {
             photoHtml = `
                 <div class="card-avatar-new">
-                    <div class="avatar-placeholder-new">照片</div>
+                    <img src="images/人物.png" 
+                         alt="Default Avatar" 
+                         style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
                 </div>
             `;
         }
