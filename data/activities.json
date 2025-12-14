@@ -1,23 +1,53 @@
 {
   "activities": [
     {
-      "id": "act001",
-      "title": "Lab Team Dinner",
+      "id": "act20251010",
+      "title": "Team Dinner",
       "date": "2025-10-10",
       "location": "Guangzhou",
-      "description": "Team building dinner with all lab members.",
+      "description": "Lab team gathering and dinner.",
       "image": "images/activity/2025.10.10聚餐.png",
-      "link": "activities/dinner-2025.html",
+      "link": "activities/2025-10-10-dinner.html",
       "type": "event"
     },
     {
-      "id": "act002",
+      "id": "act20250910",
       "title": "Teachers' Day Celebration",
       "date": "2025-09-10",
       "location": "HKUST(GZ)",
       "description": "Celebrating Teachers' Day with Prof. Wang.",
       "image": "images/activity/2025.09.10教师节.png",
-      "link": "activities/teachers-day-2025.html",
+      "link": "activities/2025-09-10-teachers-day.html",
+      "type": "event"
+    },
+    {
+      "id": "act20250108",
+      "title": "New Year Team Dinner",
+      "date": "2025-01-08",
+      "location": "Guangzhou",
+      "description": "Celebrating the start of 2025 together.",
+      "image": "images/activity/2025.01.08聚餐.png",
+      "link": "activities/2025-01-08-dinner.html",
+      "type": "event"
+    },
+    {
+      "id": "act20240914",
+      "title": "Welcome Dinner",
+      "date": "2024-09-14",
+      "location": "Guangzhou",
+      "description": "Welcoming new students to the lab.",
+      "image": "images/activity/2024.09.14聚餐.png",
+      "link": "activities/2024-09-14-dinner.html",
+      "type": "event"
+    },
+    {
+      "id": "act20240712",
+      "title": "Summer Gathering",
+      "date": "2024-07-12",
+      "location": "Guangzhou",
+      "description": "Summer team building activity.",
+      "image": "images/activity/2024.07.12.png",
+      "link": "activities/2024-07-12-gathering.html",
       "type": "event"
     }
   ]
