@@ -1,5 +1,5 @@
 /* ================================================
-   3DAgentWorldLab - 交互脚本 + 数据驱动
+   3DAgentWorld Lab - 交互脚本 + 数据驱动
    整合版：渐变流线动画 + 数据加载
    ================================================ */
 
@@ -411,6 +411,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.opacity = '1';
     }, 100);
     
-    console.log('3DAgentWorldLab Website Initialized - 渐变流线风格 + 数据驱动架构');
+    console.log('3DAgentWorld Lab Website Initialized - 渐变流线风格 + 数据驱动架构');
 });
 

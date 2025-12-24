@@ -12,7 +12,7 @@ webnew/
 
 ## ✅ 已完成的修改
 
-Logo 已经添加到论文详情页的导航栏中，位置在 "3DAgentWorldLab" 文字的左边。
+Logo 已经添加到论文详情页的导航栏中，位置在 "3DAgentWorld Lab" 文字的左边。
 
 ### 修改的文件：
 
@@ -55,7 +55,7 @@ http://localhost:8000/example-opengs-slam.html
 
 ```
 ┌─────────────────────────────────────────────┐
-│ [Logo图案] 3DAgentWorldLab │ ← 返回研究页面 │
+│ [Logo图案] 3DAgentWorld Lab │ ← 返回研究页面 │
 └─────────────────────────────────────────────┘
 ```
 
@@ -111,7 +111,7 @@ SVG格式更佳（矢量图，任意缩放不失真）：
         <!-- Logo + 名称 -->
         <a class="logo-link" href="../index.html">
             <img src="../images/logo.png" class="navbar-logo">
-            <span class="navbar-title">3DAgentWorldLab</span>
+            <span class="navbar-title">3DAgentWorld Lab</span>
         </a>
         
         <!-- 分隔线 -->
@@ -130,7 +130,7 @@ SVG格式更佳（矢量图，任意缩放不失真）：
 ### 桌面端
 ```
 ┌────────────────────────────────────────────────────────┐
-│  [Logo] 3DAgentWorldLab  │  ← 返回研究页面           │
+│  [Logo] 3DAgentWorld Lab  │  ← 返回研究页面           │
 └────────────────────────────────────────────────────────┘
    ↑                          ↑
   logo图案                   分隔线
@@ -139,7 +139,7 @@ SVG格式更佳（矢量图，任意缩放不失真）：
 ### 移动端
 ```
 ┌──────────────────────────────────┐
-│  [Logo] 3DAgentWorldLab  │  ←   │
+│  [Logo] 3DAgentWorld Lab  │  ←   │
 └──────────────────────────────────┘
 ```
 
@@ -153,7 +153,7 @@ SVG格式更佳（矢量图，任意缩放不失真）：
 ## 🎯 总结
 
 ✅ Logo 已添加到导航栏  
-✅ 位置：3DAgentWorldLab 文字左侧  
+✅ 位置：3DAgentWorld Lab 文字左侧  
 ✅ 自动响应式适配  
 ✅ 支持一键更换（替换文件即可）
 

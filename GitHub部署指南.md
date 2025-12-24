@@ -2,7 +2,7 @@
 
 ## 🎯 部署目标
 
-将 3DAgentWorldLab 网站部署到 GitHub Pages，实现免费公开访问。
+将 3DAgentWorld Lab 网站部署到 GitHub Pages，实现免费公开访问。
 
 ## 📋 前期准备
 
@@ -40,7 +40,7 @@ webnew/webnew/
 2. **创建新仓库**
    - 点击右上角 `+` → `New repository`
    - 仓库名称：`3dagentworld-lab`（或您喜欢的名称）
-   - 描述：`3DAgentWorldLab Official Website`
+   - 描述：`3DAgentWorld Lab Official Website`
    - 可见性：选择 `Public`（公开）
    - **不要**勾选 "Initialize this repository with a README"
    - 点击 `Create repository`
@@ -70,7 +70,7 @@ git config user.email "您的邮箱@example.com"
 git add .
 
 # 5. 提交到本地仓库
-git commit -m "Initial commit: 3DAgentWorldLab website"
+git commit -m "Initial commit: 3DAgentWorld Lab website"
 ```
 
 ---
@@ -288,7 +288,7 @@ GitHub Pages 自动提供 HTTPS，在设置中勾选 `Enforce HTTPS`。
 
 ## 🎉 完成！
 
-恭喜您成功部署了 3DAgentWorldLab 网站！
+恭喜您成功部署了 3DAgentWorld Lab 网站！
 
 现在您可以：
 1. 分享网站链接给团队成员
@@ -301,5 +301,5 @@ GitHub Pages 自动提供 HTTPS，在设置中勾选 `Enforce HTTPS`。
 
 **创建日期**：2025-12-03  
 **文档版本**：v1.0  
-**维护者**：3DAgentWorldLab
+**维护者**：3DAgentWorld Lab
 

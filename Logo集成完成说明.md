@@ -59,8 +59,8 @@ webnew/webnew/
 ### 导航栏结构
 ```html
 <a href="index.html" class="logo-new">
-    <img src="images/logo.png" alt="3DAgentWorldLab Logo" class="navbar-logo-img">
-    <span>3DAgentWorldLab</span>
+    <img src="images/logo.png" alt="3DAgentWorld Lab Logo" class="navbar-logo-img">
+    <span>3DAgentWorld Lab</span>
 </a>
 ```
 
