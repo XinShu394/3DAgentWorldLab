@@ -292,26 +292,100 @@ class MembersDataLoader {
 class ResearchDataLoader {
     constructor() {
         this.papersContainer = document.getElementById('papers-container');
+        this.yearFiltersContainer = document.getElementById('year-filters');
+        this.searchInput = document.getElementById('paper-search');
+        
+        this.allPapers = [];
+        this.activeYear = 'all';
+        this.searchTerm = '';
+
         if (this.papersContainer) {
             this.loadResearch();
+            this.initializeEventListeners();
         }
     }
 
     async loadResearch() {
         const data = await loadJSON('data/papers.json');
-        if (!data) {
+        if (!data || !data.papers) {
             if (this.papersContainer) {
                 this.papersContainer.innerHTML = '<div class="loading-message">加载失败，请刷新页面重试</div>';
             }
             return;
         }
         
-        if (data.papers && this.papersContainer) {
-            this.renderPapers(data.papers);
+        this.allPapers = data.papers;
+        this.initializeYearFilters();
+        this.renderPapers(this.allPapers);
+    }
+
+    initializeYearFilters() {
+        if (!this.yearFiltersContainer) return;
+
+        // Extract unique years
+        const years = [...new Set(this.allPapers.map(p => p.year).filter(y => y))].sort().reverse();
+        
+        // Create buttons
+        years.forEach(year => {
+            const btn = document.createElement('button');
+            btn.className = 'year-filter-btn';
+            btn.dataset.year = year;
+            btn.textContent = year;
+            btn.style.cssText = 'padding: 8px 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; color: var(--text-tertiary); cursor: pointer; transition: all 0.3s ease;';
+            
+            this.yearFiltersContainer.appendChild(btn);
+        });
+
+        // Add click handlers
+        this.yearFiltersContainer.querySelectorAll('.year-filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Update UI
+                this.yearFiltersContainer.querySelectorAll('.year-filter-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.style.background = 'rgba(255, 255, 255, 0.05)';
+                    b.style.color = 'var(--text-tertiary)';
+                    b.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                });
+                e.target.classList.add('active');
+                e.target.style.background = 'rgba(99, 102, 241, 0.2)';
+                e.target.style.color = 'var(--text-primary)';
+                e.target.style.borderColor = 'rgba(99, 102, 241, 0.5)';
+
+                // Update filter
+                this.activeYear = e.target.dataset.year;
+                this.filterPapers();
+            });
+        });
+    }
+
+    initializeEventListeners() {
+        if (this.searchInput) {
+            this.searchInput.addEventListener('input', (e) => {
+                this.searchTerm = e.target.value.toLowerCase();
+                this.filterPapers();
+            });
         }
     }
 
+    filterPapers() {
+        const filtered = this.allPapers.filter(paper => {
+            const matchYear = this.activeYear === 'all' || paper.year === this.activeYear;
+            const matchSearch = !this.searchTerm || 
+                paper.title.toLowerCase().includes(this.searchTerm) || 
+                paper.authors.join(' ').toLowerCase().includes(this.searchTerm) ||
+                (paper.venue && paper.venue.toLowerCase().includes(this.searchTerm));
+            
+            return matchYear && matchSearch;
+        });
+
+        this.renderPapers(filtered);
+    }
+
     renderPapers(papers) {
+        if (papers.length === 0) {
+            this.papersContainer.innerHTML = '<div class="loading-message">No papers found matching your criteria.</div>';
+            return;
+        }
         const html = papers.map(paper => this.createPaperCard(paper)).join('');
         this.papersContainer.innerHTML = html;
     }
@@ -319,19 +393,34 @@ class ResearchDataLoader {
     createPaperCard(paper) {
         // More按钮优先链接到project_url，否则使用detail_url
         const moreUrl = paper.project_url || paper.detail_url || 'papers/paper-template.html';
+        
+        // Year display fix: if venue contains year, don't show year again
+        let venueDisplay = paper.venue || '';
+        if (paper.year && !venueDisplay.includes(paper.year)) {
+            venueDisplay += ` ${paper.year}`;
+        }
+
+        // Tags HTML
+        let tagsHtml = '';
+        if (paper.tags && paper.tags.length > 0) {
+            tagsHtml = `<div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                ${paper.tags.map(tag => `<span style="font-size: 0.75rem; padding: 4px 8px; background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 4px; color: var(--accent);">${tag}</span>`).join('')}
+            </div>`;
+        }
+
         return `
-            <div class="card-new" style="position: relative; padding-bottom: 60px;">
-                <h3 class="card-title-new">${paper.title}</h3>
-                <p class="card-subtitle-new">${paper.authors.join(', ')}</p>
-                <p class="card-subtitle-new">${paper.venue} ${paper.year}</p>
-                <p class="card-description-new">${paper.abstract || ''}</p>
-                ${paper.pdf_url || paper.code_url ? `
-                    <div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
-                        ${paper.pdf_url ? `<a href="${paper.pdf_url}" class="btn-secondary-new" style="padding: 8px 16px; font-size: 0.875rem;" target="_blank">Paper</a>` : ''}
-                        ${paper.code_url ? `<a href="${paper.code_url}" class="btn-secondary-new" style="padding: 8px 16px; font-size: 0.875rem;" target="_blank">Code</a>` : ''}
-                    </div>
-                ` : ''}
-                <a href="${moreUrl}" class="btn-primary-new" style="position: absolute; bottom: 16px; right: 16px; padding: 8px 20px; font-size: 0.875rem;" target="_blank">More →</a>
+            <div class="card-new" style="position: relative; padding-bottom: 20px; display: flex; flex-direction: column;">
+                ${tagsHtml}
+                <h3 class="card-title-new" style="font-size: 1.25rem; margin-bottom: 10px;">${paper.title}</h3>
+                <p class="card-subtitle-new" style="color: var(--text-secondary); margin-bottom: 8px;">${paper.authors.join(', ')}</p>
+                <p class="card-subtitle-new" style="color: var(--accent); font-weight: 600; margin-bottom: 12px;">${venueDisplay}</p>
+                <p class="card-description-new" style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">${paper.abstract || ''}</p>
+                
+                <div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
+                    ${paper.pdf_url ? `<a href="${paper.pdf_url}" class="btn-secondary-new" style="padding: 6px 16px; font-size: 0.85rem;" target="_blank">📄 Paper</a>` : ''}
+                    ${paper.code_url ? `<a href="${paper.code_url}" class="btn-secondary-new" style="padding: 6px 16px; font-size: 0.85rem;" target="_blank">💻 Code</a>` : ''}
+                    ${paper.project_url ? `<a href="${paper.project_url}" class="btn-secondary-new" style="padding: 6px 16px; font-size: 0.85rem;" target="_blank">🌐 Project</a>` : ''}
+                </div>
             </div>
         `;
     }

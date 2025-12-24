@@ -75,6 +75,26 @@
                         <h2 style="font-size: 2.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 40px; text-align: center; text-shadow: 0 0 20px var(--glow-primary);">
                             Publications
                         </h2>
+                        
+                        <!-- Filter Toolbar -->
+                        <div class="filter-toolbar-new" style="margin-bottom: 30px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; background: rgba(42, 45, 75, 0.4); padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                            <!-- Search -->
+                            <div style="position: relative; flex: 1; min-width: 250px;">
+                                <input type="text" id="paper-search" placeholder="Search papers by title, author, or venue..." 
+                                       style="width: 100%; padding: 12px 16px; padding-left: 44px; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; color: var(--text-primary); font-size: 0.95rem; transition: all 0.3s ease;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-tertiary);">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </div>
+                            
+                            <!-- Year Filter -->
+                            <div id="year-filters" style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                <!-- Dynamically populated by JS -->
+                                <button class="year-filter-btn active" data-year="all" style="padding: 8px 16px; background: rgba(99, 102, 241, 0.2); border: 1px solid rgba(99, 102, 241, 0.5); border-radius: 6px; color: var(--text-primary); cursor: pointer; transition: all 0.3s ease;">All</button>
+                            </div>
+                        </div>
+
                         <div id="papers-container" class="cards-grid-new">
                             <div class="loading-message">Loading publications...</div>
                         </div>
