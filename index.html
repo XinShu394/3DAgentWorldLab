@@ -332,39 +332,9 @@
                 </div>
                 
                 <!-- Activity Grid -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
-                    <!-- Activity Card 1 -->
-                    <div class="card-new" style="background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; overflow: hidden; transition: all 0.3s ease; cursor: pointer;">
-                        <div style="aspect-ratio: 16/10; background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3)); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
-                            🍽️
-                        </div>
-                        <div style="padding: 20px;">
-                            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">Team Dinner</h3>
-                            <p style="font-size: 0.875rem; color: var(--text-tertiary); line-height: 1.5;">Celebrating milestones together</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Activity Card 2 -->
-                    <div class="card-new" style="background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; overflow: hidden; transition: all 0.3s ease; cursor: pointer;">
-                        <div style="aspect-ratio: 16/10; background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(168, 85, 247, 0.3)); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
-                            🎉
-                        </div>
-                        <div style="padding: 20px;">
-                            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">Lab Celebration</h3>
-                            <p style="font-size: 0.875rem; color: var(--text-tertiary); line-height: 1.5;">Conference paper acceptance party</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Activity Card 3 -->
-                    <div class="card-new" style="background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; overflow: hidden; transition: all 0.3s ease; cursor: pointer;">
-                        <div style="aspect-ratio: 16/10; background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(59, 130, 246, 0.3)); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
-                            ☕
-                        </div>
-                        <div style="padding: 20px;">
-                            <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">Coffee Chat</h3>
-                            <p style="font-size: 0.875rem; color: var(--text-tertiary); line-height: 1.5;">Casual team bonding moments</p>
-                        </div>
-                    </div>
+                <div id="home-activities-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
+                    <!-- 动态加载最近的活动 -->
+                    <div style="grid-column: 1/-1; text-align: center; color: var(--text-tertiary);">Loading activities...</div>
                 </div>
                 
                 <!-- View All Activity Link -->

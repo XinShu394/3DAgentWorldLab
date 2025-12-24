@@ -392,6 +392,68 @@ class ActivityDataLoader {
 }
 
 // ===================================
+// HOME PAGE ACTIVITIES LOADING
+// ===================================
+
+class HomeActivitiesLoader {
+    constructor() {
+        this.container = document.getElementById('home-activities-container');
+        if (this.container) {
+            this.loadActivities();
+        }
+    }
+
+    async loadActivities() {
+        const data = await loadJSON('data/activities.json');
+        if (!data || !data.activities) {
+            this.container.innerHTML = '<div class="loading-message">暂无活动信息</div>';
+            return;
+        }
+
+        // Sort by date descending and take top 3
+        const sortedActivities = data.activities.sort((a, b) => {
+            return new Date(b.date) - new Date(a.date);
+        });
+
+        const recentActivities = sortedActivities.slice(0, 3);
+        
+        this.renderActivities(recentActivities);
+    }
+
+    renderActivities(activities) {
+        if (activities.length === 0) {
+            this.container.innerHTML = '<div class="loading-message">暂无活动信息</div>';
+            return;
+        }
+        
+        const html = activities.map(activity => this.createHomeActivityCard(activity)).join('');
+        this.container.innerHTML = html;
+    }
+
+    createHomeActivityCard(activity) {
+        // Optimized card for home page grid
+        return `
+            <div class="card-new" style="background: rgba(42, 45, 75, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; overflow: hidden; transition: all 0.3s ease; cursor: pointer; display: flex; flex-direction: column;" onclick="window.location.href='${activity.link}'">
+                ${activity.image ? `
+                    <div style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
+                         <img src="${activity.image}" alt="${activity.title}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                ` : `
+                    <div style="aspect-ratio: 16/10; background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3)); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                        🎉
+                    </div>
+                `}
+                <div style="padding: 20px; flex: 1; display: flex; flex-direction: column;">
+                    <div style="font-size: 0.8rem; color: var(--accent); margin-bottom: 4px;">${activity.date}</div>
+                    <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">${activity.title}</h3>
+                    <p style="font-size: 0.875rem; color: var(--text-tertiary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${activity.description}</p>
+                </div>
+            </div>
+        `;
+    }
+}
+
+// ===================================
 // 初始化所有组件
 // ===================================
 
@@ -403,6 +465,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new MembersDataLoader();
     new ResearchDataLoader();
     new ActivityDataLoader();
+    new HomeActivitiesLoader();
     
     // 页面渐入动画
     document.body.style.opacity = '0';
@@ -413,4 +476,3 @@ document.addEventListener('DOMContentLoaded', () => {
     
     console.log('3DAgentWorld Lab Website Initialized - 渐变流线风格 + 数据驱动架构');
 });
-
